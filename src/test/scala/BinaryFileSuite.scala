@@ -19,11 +19,11 @@ class BinaryFileSuite extends QueryTest with SharedSparkSession {
 
 
 
-    // This works as expected.
+    // This works as expected (3.3.0/3.2.1).
     val like_count = spark.sql("select * from files where path like '%.csv'").count()
     assert(like_count === 1)
 
-    // This does not work as expected.
+    // This does not work as expected (3.3.0/3.2.1).
     val not_like_count = spark.sql("select * from files where path not like '%.csv'").count()
      assert(not_like_count === 2)
 

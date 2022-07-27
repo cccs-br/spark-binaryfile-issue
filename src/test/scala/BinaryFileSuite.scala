@@ -10,6 +10,11 @@ class BinaryFileSuite extends QueryTest with SharedSparkSession {
 
   test("binary file dataframe") {
     // load files in directly into df using 'binaryFile' format.
+    //
+    // - src/test/resources/files/
+    //  - test1.csv
+    //  - test2.json
+    //  - test3.txt
     val df = spark
       .read
       .format("binaryFile")
